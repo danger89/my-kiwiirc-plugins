@@ -10,8 +10,7 @@ kiwi.plugin('url-channels', function(kiwi, log) {
 
         channels.forEach(function (channel) {
             const activeBuffer = kiwi.state.getActiveBuffer(network.id);
-            const bufferName = (channel[0] !== '#') ? '#' + channel : channel;
-            const newBuffer = kiwi.state.addBuffer(network.id, bufferName);
+            const newBuffer = kiwi.state.addBuffer(network.id, channel);
             newBuffer.enabled = true;
 
             if (activeBuffer && !activeBuffer.isChannel()) {
